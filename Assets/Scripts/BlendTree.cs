@@ -14,11 +14,11 @@ public class BlendTree : MonoBehaviour
 	{
 		if (Input.GetAxisRaw("Vertical") > 0f) //Walk
 		{
-
+			puppy2Animator.SetBool("isWalking", true);
 		}
 		else //Idle
 		{
-
+			puppy2Animator.SetBool("isWalking", false);
 		}
 
 		transform.position += new Vector3(Time.deltaTime * 0.32f * speed, 0f);

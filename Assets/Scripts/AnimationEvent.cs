@@ -12,7 +12,17 @@ public class AnimationEvent : MonoBehaviour
 
 	private void Update()
 	{
+		if (Input.GetAxisRaw("Vertical") > 0f) //Walk
+		{
+			transform.position += new Vector3(Time.deltaTime * 0.3f, 0f);
+			puppy3Animator.SetBool("isWalking", true);
+		}
+		else //Idle
+		{
+			puppy3Animator.SetBool("isWalking", false);
+		}
 
+		
 	}
 
 	public void PuppyMagicSpell()
